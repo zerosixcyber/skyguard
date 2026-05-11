@@ -1,0 +1,59 @@
+[project]
+name = "skyguard"
+version = "0.1.0"
+description = "Open-source passive drone detection system using SDR and RF signal analysis"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+authors = [
+    { name = "zerosix" },
+]
+keywords = ["drone", "detection", "sdr", "rf", "signal-analysis", "security"]
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "pre-commit",
+]
+
+[project.urls]
+Repository = "https://github.com/zerosixcyber/skyguard"
+Issues = "https://github.com/zerosixcyber/skyguard/issues"
+
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "I",
+    "N",
+    "UP",
+    "S",
+    "B",
+    "A",
+    "C4",
+    "PT",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
